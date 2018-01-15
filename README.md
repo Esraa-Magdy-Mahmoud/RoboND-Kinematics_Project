@@ -2,3 +2,13 @@
 # Kinematics Project
 ## Robotic Arm: Pick&Place
 In this project, I solved the Inverse Kinematics problem for a six degree-of-freedom robotic arm (Kuka KR210) in a simulated environment to complete a pick-and-place operation. (implemented using ROS, Gazebo and RViz).
+
+## Requirements:
+  * Ubuntu 16.04.
+  * ROS Kinetic.
+  * gazebo 7.7.0.
+  
+## Original Repo:
+  https://github.com/udacity/RoboND-Kinematics-Project
+
+
