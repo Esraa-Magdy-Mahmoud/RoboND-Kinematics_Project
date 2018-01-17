@@ -4,7 +4,8 @@
 
 
 ### 1-Forward Kinematics demo
-![fk.png](attachment:fk.png)
+![fk](https://user-images.githubusercontent.com/17046622/35038031-0e2fb7c6-fb82-11e7-803a-8a6249a7e2f7.png)
+
 make the Robot model semi-transparent by assigning alpha to 0.3
 
 ### 2-DH Parameter table
