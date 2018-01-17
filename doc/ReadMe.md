@@ -45,9 +45,9 @@ Implementing the above generic Transformation in a function,using it the individ
 The following two images illustrate the DH parameters frame convention versus Rviz frame convention.
 
 1-Rviz Convention
-![Rviz_conv.png](attachment:Rviz_conv.png)
+![rviz_conv](https://user-images.githubusercontent.com/17046622/35038197-b63cb81a-fb82-11e7-8276-fe9cd65712ca.png)
 2-DH Convention 
-![DH_conv.png](attachment:DH_conv.png)
+![dh_conv](https://user-images.githubusercontent.com/17046622/35038151-8a156ade-fb82-11e7-9696-65bca57f7ec4.png)
 
 
 
@@ -61,7 +61,8 @@ then WC_position = EE_pose - d7*R
 Second, Calculate the first three joint variables:
 theta 1 can be easily calculated by atan2(WC_y, WC_z)
 theta 2, theta 3 can be calculated using the following calculations
-![IK.jpg](attachment:IK.jpg)
+![ik](https://user-images.githubusercontent.com/17046622/35038176-a990b904-fb82-11e7-87c7-4502f9317be8.jpg)
+
 
 The Calculations of the last three joint angles can be done by extracting the rotation matrices from DH Transformations.
 The resultant rotation is:
@@ -89,7 +90,9 @@ to take care of multipe solutions :
 I did all the calculations once in IK_debug and saved all the outputs into files, so when running the code only needs to look up into the files not doing any complex matrix multiplications.
 
 the Ik solution while loading the pre-calculations from files can be found in approximately less than 0.2 secs
-![out.png](attachment:out.png)
+
+![out](https://user-images.githubusercontent.com/17046622/35038190-b0e99c2a-fb82-11e7-8032-fe1e966c5eea.png)
+
 
 
 # 4- IK_server.py
