@@ -20,24 +20,7 @@ Links|alpha(i-1)|a(i-1)|di   |theta_i
 6_G  |0         |0     |0.303|0             
 
 * The Parameters are derived from URDF file and with the help of the figure below showing the DH convention while taking into account that the convention of the URDF file is diffrent from the DH convention.
-* Given the DH Params, a transofrmation matrix from i to i-1 can be calculated as follows :
- $\begin{pmatrix}
- cos(theta(i)) & -sin(theta(i)) & 0 & a_i-1 \\
- sin(theta(i))*cos(alpha(i-1)) & cos(theta(i))*cos(alpha(i-1)) &-sin(alpha(i-1))& -sin(alpha(i-1))*d(i) \\ 
- sin(theta(i))*sin(alpha(i-1)) & cos(theta(i))*sin(alpha(i-1)) &  cos(alpha(i-1))& cos(alpha(i-1))*d(i) \\
- 0&0&0&1\\
-\end{pmatrix} $
-
-Implementing the above generic Transformation in a function,using it the individual Transformations will be as following:
-    *    T0_1 = Transfom(theta_1 ,d1 ,alpha_0 ,a0)  
-    *    T1_2 = Transfom(theta_2 ,d2 ,alpha_1 ,a1)
-    *    T2_3 = Transfom(theta_3 ,d3 ,alpha_2 ,a2)
-    *    T3_4 = Transfom(theta_4 ,d4 ,alpha_3 ,a3)
-    *    T4_5 = Transfom(theta_5 ,d5 ,alpha_4 ,a4)
-    *    T5_6 = Transfom(theta_6 ,d6 ,alpha_5 ,a5)
-    *    T6_g = Transfom(theta_7 ,d7 ,alpha_6 ,a6)
-
-
+* Given the DH Params, a transofrmation matrix from i to i-1 can be calculated. 
 * Transformation from the end-effector to the base link will be a composition of transformation
     T0_g = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_g
 
@@ -58,10 +41,7 @@ The comopsition of the mentioned rotations will result in the following matrix:
 Rrpy = R_z * R_y * R_x * R_corr 
 then WC_position = EE_pose - d7*R
 
-Second, Calculate the first three joint variables:
-theta 1 can be easily calculated by atan2(WC_y, WC_z)
-theta 2, theta 3 can be calculated using the following calculations
-![ik](https://user-images.githubusercontent.com/17046622/35038176-a990b904-fb82-11e7-87c7-4502f9317be8.jpg)
+Second, Calculate the first three joint variables.
 
 
 The Calculations of the last three joint angles can be done by extracting the rotation matrices from DH Transformations.
