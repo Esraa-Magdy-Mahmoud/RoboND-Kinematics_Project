@@ -28,17 +28,17 @@ Links|alpha(i-1)|a(i-1)|di   |theta_i
 \end{pmatrix} $
 
 Implementing the above generic Transformation in a function,using it the individual Transformations will be as following:
-    #####   T0_1 = Transfom(theta_1 ,d1 ,alpha_0 ,a0)  
-    #####    T1_2 = Transfom(theta_2 ,d2 ,alpha_1 ,a1)
-    ####    T2_3 = Transfom(theta_3 ,d3 ,alpha_2 ,a2)
-    ####    T3_4 = Transfom(theta_4 ,d4 ,alpha_3 ,a3)
-    ####    T4_5 = Transfom(theta_5 ,d5 ,alpha_4 ,a4)
-    ####    T5_6 = Transfom(theta_6 ,d6 ,alpha_5 ,a5)
-    ####    T6_g = Transfom(theta_7 ,d7 ,alpha_6 ,a6)
+    *    T0_1 = Transfom(theta_1 ,d1 ,alpha_0 ,a0)  
+    *    T1_2 = Transfom(theta_2 ,d2 ,alpha_1 ,a1)
+    *    T2_3 = Transfom(theta_3 ,d3 ,alpha_2 ,a2)
+    *    T3_4 = Transfom(theta_4 ,d4 ,alpha_3 ,a3)
+    *    T4_5 = Transfom(theta_5 ,d5 ,alpha_4 ,a4)
+    *    T5_6 = Transfom(theta_6 ,d6 ,alpha_5 ,a5)
+    *    T6_g = Transfom(theta_7 ,d7 ,alpha_6 ,a6)
 
 
 * Transformation from the end-effector to the base link will be a composition of transformation
-T0_g = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_g
+    T0_g = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_g
 
 *  The URDF doesn't folow the same convention of the DH parameters,Hence the frames of the DH model will not be the same as Rviz/Gazebo to Compensate for rotation discrepancy between DH parameters and Gazebo a rotation matrix involoves rotation about z axis with 180 degs then about the y axis with -90 degs is implemented.
 The following two images illustrate the DH parameters frame convention versus Rviz frame convention.
